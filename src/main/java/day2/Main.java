@@ -1,4 +1,4 @@
-package day_two;
+package day2;
 
 import java.util.function.Supplier;
 import java.util.stream.LongStream;

@@ -1,4 +1,4 @@
-package day_two;
+package day2;
 
 public class WrappingPaperCalculator {
 
