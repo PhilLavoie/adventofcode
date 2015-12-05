@@ -55,4 +55,16 @@ public class Dimensions {
     public long getHeight() {
         return height;
     }
+
+    public long[] getSmallestSideScalars() {
+        if (length > width && length > height) {
+            return new long[] {width, height};
+        }
+
+        if (width < height) {
+            return new long[] {length, width};
+        }
+
+        return new long[] {length, height};
+    }
 }
