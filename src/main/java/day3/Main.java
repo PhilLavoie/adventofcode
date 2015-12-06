@@ -4,11 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        GiftRecorder giftRecorder = new GiftRecorder();
+        VisitedHouseRecorder visitedHouseRecorder = new VisitedHouseRecorder();
 
-        int noVisitedHouses = giftRecorder.visitedHousesForDirections(args[0]);
+        int noHousesVisitedBySanta =
+            visitedHouseRecorder.visitedHousesBySantaForDirections(args[0]);
+        System.out.println("number of houses visited: " + noHousesVisitedBySanta);
 
-        System.out.println("number of houses visited: " + noVisitedHouses);
-
+        int noHousesVisitedBySantaAndRoboSanta =
+            visitedHouseRecorder.visitedHousesBySantaAndRoboSantaForDirections(args[0]);
+        System.out.println("number of houses visited by Santa & Robo Santa: "
+            + noHousesVisitedBySantaAndRoboSanta);
     }
 }

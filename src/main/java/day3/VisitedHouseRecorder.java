@@ -7,13 +7,13 @@ import java.util.TreeSet;
 
 import static util.StringIterable.iterableOf;
 
-public class GiftRecorder {
+public class VisitedHouseRecorder {
 
     private static final List<Character> validDirections = Arrays.asList('<', '>', '^', 'v');
 
     private final Comparator<Coordinates> coordinatesComparator;
 
-    public GiftRecorder() {
+    public VisitedHouseRecorder() {
         coordinatesComparator = (coordinates1, coordinates2) -> {
             int x1 = coordinates1.getX();
             int x2 = coordinates2.getX();
@@ -25,7 +25,7 @@ public class GiftRecorder {
         };
     }
 
-    public int visitedHousesForDirections(String directions) {
+    public int visitedHousesBySantaForDirections(String directions) {
         checkDirections(directions);
 
         TreeSet<Coordinates> visitedCoordinates = new TreeSet<>(coordinatesComparator);
@@ -33,10 +33,37 @@ public class GiftRecorder {
         Coordinates currentPosition = new Coordinates(0, 0);
         visitedCoordinates.add(currentPosition);
 
-        for (char direction: iterableOf(directions)) {
+        for (char direction : iterableOf(directions)) {
             Coordinates nextPosition = nextCoordinates(currentPosition, direction);
             visitedCoordinates.add(nextPosition);
-            currentPosition = nextPosition;            
+            currentPosition = nextPosition;
+        }
+
+        return visitedCoordinates.size();
+    }
+
+    public int visitedHousesBySantaAndRoboSantaForDirections(String directions) {
+        checkDirections(directions);
+
+        TreeSet<Coordinates> visitedCoordinates = new TreeSet<>(coordinatesComparator);
+
+        Coordinates santaPosition = new Coordinates(0, 0);
+        Coordinates roboSantaPosition = santaPosition;
+        visitedCoordinates.add(santaPosition);
+
+        boolean isSantasTurn = true;
+
+        for (char direction : iterableOf(directions)) {
+            Coordinates nextPosition;
+            if (isSantasTurn) {
+                nextPosition = nextCoordinates(santaPosition, direction);
+                santaPosition = nextPosition;
+            } else {
+                nextPosition = nextCoordinates(roboSantaPosition, direction);
+                roboSantaPosition = nextPosition;
+            }
+            visitedCoordinates.add(nextPosition);
+            isSantasTurn = !isSantasTurn;
         }
 
         return visitedCoordinates.size();
@@ -63,7 +90,7 @@ public class GiftRecorder {
     }
 
     private void checkDirection(int direction) {
-        checkDirection((char)direction);
+        checkDirection((char) direction);
     }
 
     private void checkDirections(String directions) {
