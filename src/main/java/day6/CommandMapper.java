@@ -1,6 +1,5 @@
 package day6;
 
-import day6.part1.Part1Grid;
 import util.Procedure;
 
 import java.util.Iterator;

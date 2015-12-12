@@ -1,9 +1,6 @@
 package day5.part2;
 
-import java.lang.reflect.Array;
 import java.util.Comparator;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.TreeSet;
 import java.util.function.Predicate;
 

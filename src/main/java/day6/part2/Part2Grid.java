@@ -3,10 +3,6 @@ package day6.part2;
 import day6.Grid;
 import day6.Interval;
 
-import java.util.function.Function;
-
-import static com.google.common.base.Preconditions.checkElementIndex;
-
 public class Part2Grid extends Grid<Integer> {
 
     public Part2Grid(Integer[][] lights) {
