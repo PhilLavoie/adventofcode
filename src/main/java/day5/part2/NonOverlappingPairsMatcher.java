@@ -1,5 +1,7 @@
 package day5.part2;
 
+import util.ValuePair;
+
 import java.util.Comparator;
 import java.util.TreeSet;
 import java.util.function.Predicate;
@@ -8,7 +10,7 @@ import static util.StringIterable.iterableOf;
 
 public class NonOverlappingPairsMatcher implements Predicate<String> {
 
-    private final Comparator<Pair> comparator =
+    private final Comparator<ValuePair<Character>> comparator =
         (pair1, pair2) -> {
             char left1 = pair1.getLeft();
             char left2 = pair2.getLeft();
@@ -23,12 +25,12 @@ public class NonOverlappingPairsMatcher implements Predicate<String> {
             return false;
         }
 
-        TreeSet<Pair> pairs = new TreeSet<>(comparator);
+        TreeSet<ValuePair<Character>> pairs = new TreeSet<>(comparator);
 
         Character firstChar = s.charAt(0);
         Character secondChar = s.charAt(1);
 
-        Pair lastPair = new Pair(firstChar, secondChar);
+        ValuePair<Character> lastPair = new ValuePair(firstChar, secondChar);
         pairs.add(lastPair);
 
         boolean pairAlreadyOverlapped = false;
@@ -37,7 +39,7 @@ public class NonOverlappingPairsMatcher implements Predicate<String> {
             firstChar = secondChar;
             secondChar = character;
 
-            Pair newPair = new Pair(firstChar, secondChar);
+            ValuePair<Character> newPair = new ValuePair(firstChar, secondChar);
             //Skip overlapping pairs.
             if (0 == comparator.compare(lastPair, newPair)) {
                 if (!pairAlreadyOverlapped) {
@@ -48,6 +50,7 @@ public class NonOverlappingPairsMatcher implements Predicate<String> {
                     return true;
                 }
             }
+            pairAlreadyOverlapped = false;
 
             if (pairs.contains(newPair)) {
                 return true;
