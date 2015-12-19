@@ -1,4 +1,4 @@
-package day10;
+package util;
 
 import com.google.common.base.Preconditions;
 
@@ -6,12 +6,12 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.stream.IntStream;
 
-public class Buffer implements Iterable<Integer> {
+public class IntBuffer implements Iterable<Integer> {
 
     private int[] data;
     private int length;
 
-    public Buffer() {
+    public IntBuffer() {
         data = new int[10];
         length = 0;
     }

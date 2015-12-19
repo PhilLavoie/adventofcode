@@ -2,6 +2,7 @@ package day10;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import util.IntBuffer;
 
 import java.util.Iterator;
 
@@ -11,14 +12,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Buffer buffer1 = new Buffer();
-        Buffer buffer2 = new Buffer();
+        IntBuffer buffer1 = new IntBuffer();
+        IntBuffer buffer2 = new IntBuffer();
 
         //Initial input
         fillBufferWithQuestionInput(buffer1);
 
         System.out.println("Part 1:");
-        Buffer result = part1(buffer1, buffer2);
+        IntBuffer result = part1(buffer1, buffer2);
         System.out.println("Result: " + bufferString(result));
         System.out.println("Result length: " + result.length());
 
@@ -33,11 +34,11 @@ public class Main {
         System.out.println("Result length: " + result.length());
     }
 
-    private static void fillBufferWithQuestionInput(Buffer buffer) {
+    private static void fillBufferWithQuestionInput(IntBuffer buffer) {
         buffer.append(1, 1, 1, 3, 1, 2, 2, 1, 1, 3);
     }
 
-    private static Buffer part1(Buffer input, Buffer result) {
+    private static IntBuffer part1(IntBuffer input, IntBuffer result) {
         for (int i = 0; i < 40; i++) {
             lookAndSay(input, result);
 
@@ -48,7 +49,7 @@ public class Main {
             }
 
             //The result becomes the input.
-            Buffer tmp = input;
+            IntBuffer tmp = input;
             input = result;
             result = tmp;
             result.clear();
@@ -59,7 +60,7 @@ public class Main {
         return result;
     }
 
-    private static Buffer part2(Buffer input, Buffer result) {
+    private static IntBuffer part2(IntBuffer input, IntBuffer result) {
         for (int i = 0; i < 50; i++) {
             lookAndSay(input, result);
 
@@ -70,7 +71,7 @@ public class Main {
             }
 
             //The result becomes the input.
-            Buffer tmp = input;
+            IntBuffer tmp = input;
             input = result;
             result = tmp;
             result.clear();
@@ -81,7 +82,7 @@ public class Main {
         return result;
     }
 
-    private static String bufferString(Buffer buffer) {
+    private static String bufferString(IntBuffer buffer) {
         StringBuilder builder = new StringBuilder(buffer.length());
 
         buffer.forEach(value -> builder.append(value));
@@ -89,7 +90,7 @@ public class Main {
         return builder.toString();
     }
 
-    private static void lookAndSay(Buffer input, Buffer result) {
+    private static void lookAndSay(IntBuffer input, IntBuffer result) {
         result.clear();
         Iterator<Integer> iterator = input.iterator();
 
