@@ -2,8 +2,8 @@ package day12.json;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import util.CharBuffer;
-import util.PeekableCharIterator;
+import util.buffers.CharBuffer;
+import util.iterators.PeekableCharIterator;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static javax.lang.model.SourceVersion.isIdentifier;

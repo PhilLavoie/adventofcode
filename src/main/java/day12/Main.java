@@ -5,7 +5,7 @@ import day12.json.JsonParser;
 import day12.json.serialization.JsonSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import util.InputStreamCharIterator;
+import util.iterators.InputStreamCharIterator;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

@@ -2,7 +2,7 @@ package day6;
 
 import day6.part1.Part1Grid;
 import day6.part2.Part2Grid;
-import util.Procedure;
+import util.functional.Procedure;
 
 import java.util.Iterator;
 

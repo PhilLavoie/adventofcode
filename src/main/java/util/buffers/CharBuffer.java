@@ -1,22 +1,23 @@
-package util;
+package util.buffers;
 
 import com.google.common.base.Preconditions;
+import com.google.common.io.CharStreams;
 
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.stream.IntStream;
 
-public class IntBuffer implements Iterable<Integer> {
+public class CharBuffer {
 
-    private int[] data;
+    private char[] data;
     private int length;
 
-    public IntBuffer() {
-        data = new int[10];
+    public CharBuffer() {
+        data = new char[10];
         length = 0;
     }
 
-    public int get(int index) {
+    public char get(int index) {
         Preconditions.checkElementIndex(index, length);
 
         return data[index];
@@ -26,7 +27,7 @@ public class IntBuffer implements Iterable<Integer> {
         data = Arrays.copyOf(data, capacity() * 2);
     }
 
-    public void append(int value) {
+    public void append(char value) {
         if (length() == capacity()) {
             grow();
         }
@@ -46,6 +47,10 @@ public class IntBuffer implements Iterable<Integer> {
         length = 0;
     }
 
+    public boolean isEmpty() {
+        return length == 0;
+    }
+
     public int length() {
         return length;
     }
@@ -54,7 +59,8 @@ public class IntBuffer implements Iterable<Integer> {
         return data.length;
     }
 
-    @Override public Iterator<Integer> iterator() {
-        return IntStream.of(data).limit(length()).iterator();
+    public char[] getData() {
+        return Arrays.copyOf(data, length);
     }
+
 }

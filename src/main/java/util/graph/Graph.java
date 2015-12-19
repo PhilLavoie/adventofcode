@@ -1,4 +1,4 @@
-package day9.graph;
+package util.graph;
 
 import java.util.HashMap;
 import java.util.Map;

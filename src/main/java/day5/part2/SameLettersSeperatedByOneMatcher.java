@@ -3,7 +3,7 @@ package day5.part2;
 import java.util.LinkedList;
 import java.util.function.Predicate;
 
-import static util.StringIterable.iterableOf;
+import static util.iterables.StringIterable.iterableOf;
 
 public class SameLettersSeperatedByOneMatcher implements Predicate<String> {
 

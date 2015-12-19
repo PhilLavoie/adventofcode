@@ -1,7 +1,7 @@
 package day9.route;
 
-import day9.graph.Arc;
-import day9.graph.Node;
+import util.graph.Arc;
+import util.graph.Node;
 
 import java.util.Iterator;
 import java.util.List;

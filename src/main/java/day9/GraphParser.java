@@ -1,7 +1,7 @@
 package day9;
 
-import day9.graph.Graph;
-import day9.graph.Node;
+import util.graph.Graph;
+import util.graph.Node;
 
 import java.io.*;
 

@@ -1,6 +1,6 @@
 package day6;
 
-import util.Procedure;
+import util.functional.Procedure;
 
 import java.util.Iterator;
 

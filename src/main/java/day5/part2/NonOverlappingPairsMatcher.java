@@ -1,12 +1,12 @@
 package day5.part2;
 
-import util.ValuePair;
+import util.tuples.ValuePair;
 
 import java.util.Comparator;
 import java.util.TreeSet;
 import java.util.function.Predicate;
 
-import static util.StringIterable.iterableOf;
+import static util.iterables.StringIterable.iterableOf;
 
 public class NonOverlappingPairsMatcher implements Predicate<String> {
 

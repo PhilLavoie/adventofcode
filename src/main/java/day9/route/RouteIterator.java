@@ -1,6 +1,6 @@
 package day9.route;
 
-import day9.graph.Graph;
+import util.graph.Graph;
 
 import java.util.Iterator;
 import java.util.LinkedList;

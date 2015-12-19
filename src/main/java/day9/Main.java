@@ -1,6 +1,6 @@
 package day9;
 
-import day9.graph.Graph;
+import util.graph.Graph;
 import day9.route.Route;
 import day9.route.RouteEnumerator;
 import org.slf4j.Logger;

@@ -1,8 +1,7 @@
 package day11;
 
-import util.ValuePair;
+import util.tuples.ValuePair;
 
-import java.util.HashSet;
 import java.util.function.Predicate;
 
 import static com.google.common.base.Preconditions.checkNotNull;

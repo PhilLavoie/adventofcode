@@ -1,9 +1,9 @@
 package day9.route;
 
 import com.google.common.collect.FluentIterable;
-import day9.graph.Arc;
-import day9.graph.Graph;
-import day9.graph.Node;
+import util.graph.Arc;
+import util.graph.Graph;
+import util.graph.Node;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package util;
+package util.iterables;
 
 import java.util.Iterator;
 

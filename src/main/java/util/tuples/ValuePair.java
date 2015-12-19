@@ -1,4 +1,4 @@
-package util;
+package util.tuples;
 
 /**
  * Value based pair.

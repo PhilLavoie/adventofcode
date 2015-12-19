@@ -1,4 +1,4 @@
-package util;
+package util.iterators;
 
 public interface CharIterator {
     char next();

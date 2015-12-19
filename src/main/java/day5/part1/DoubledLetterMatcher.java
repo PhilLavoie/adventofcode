@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.function.Predicate;
 
-import static util.StringIterable.iterableOf;
+import static util.iterables.StringIterable.iterableOf;
 
 public class DoubledLetterMatcher implements Predicate<String> {
 

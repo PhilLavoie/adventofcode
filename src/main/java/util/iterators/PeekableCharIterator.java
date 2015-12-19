@@ -1,4 +1,4 @@
-package util;
+package util.iterators;
 
 public interface PeekableCharIterator extends CharIterator {
     char peek();

@@ -1,4 +1,4 @@
-package day9.graph;
+package util.graph;
 
 public class Arc {
     private final Node from;
