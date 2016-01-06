@@ -6,7 +6,7 @@ package util.tuples;
  *
  * @param <T>
  */
-public class ValuePair<T> {
+public class ValuePair<T> implements Pair<T, T> {
     
     private final T left;
     private final T right;
